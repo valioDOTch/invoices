@@ -1,0 +1,107 @@
+% !TEX encoding = UTF-8 Unicode
+%-------------------------------------------------------
+% Author: Pat Mächler based on the work from Pascal Vizeli and Christian Häusler
+% Email: pirate@valio.ch
+%-------------------------------------------------------
+
+\ProvidesFile{pwbletter.lco}[2014/10/11 v1.0 (Pat Mächler)]
+
+\RequirePackage{pwbbasic}
+
+\RequirePackage{multirow}
+
+
+
+
+%\addto\captions{english}{
+	\newcommand{\pwblogoww}{../gfx/pog_Logo_st_cmyk.pdf}
+	\newcommand{\pwblogowwnego}{../gfx/pog_Logo_negy_cmyk.pdf}
+	\newcommand{\pwblogost}{../gfx/pog_Logo_st_cmyk.pdf}
+	\newcommand{\pwblogostnego}{../gfx/pog_Logo_negy_cmyk.pdf}
+	\newcommand{\pwbname}{\textbf{pirates}withoutborders}
+	\newcommand{\pwbnamelong}{Pirates without Borders}
+	\newcommand{\pwbdomain}{pirates-without-borders.org}
+%}
+
+\LoadLetterOption{SN}
+\KOMAoptions{foldmarks=true}
+\KOMAoptions{foldmarks=blmTp}
+
+
+%-------------------------------------------------------
+% New-Var
+\newkomavar{departement}
+\newkomavar{partei}
+\newkomavar{fromstreet}
+\newkomavar{fromcity}
+
+% for translate
+\newkomavar{memberid}
+\newkomavar{membernick}
+\newkomavar{memberemail}
+
+\setkomavar{date}{\today}
+
+% kompatibilitaet zu komascript
+\setkomavar{fromaddress}{\usekomavar{fromstreet}\\\usekomavar{fromcity}}
+
+% -----------------------------------
+% Schrift und Absatz
+% -----------------------------------
+%\ifxetex
+%	\setkomafont{subject}{\bfseries}
+%\else
+	% nothing
+%\fi
+
+\KOMAoptions{fontsize=11pt}
+
+\DeclareFixedFont{\headtext}{\encodingdefault}{\familydefault}{\seriesdefault}{\shapedefault}{8pt}
+
+% -----------------------------------
+% Sprache
+% -----------------------------------
+
+\setkomavar{fromurl}{\pwbdomain}
+\setkomavar{fromlogo}{\includegraphics[width=5.5cm]{\pwblogost}}
+
+\setkomavar{partei}{\pwbnamelong}
+
+%-------------------------------------------------------
+% Positionnen
+\@setplength{lochpos}{-2.5cm}
+\@setplength{locvpos}{6.3cm}
+
+
+%-------------------------------------------------------
+% Location
+\setkomavar{location}{\headtext
+	\begin{tabular}{p{2cm}l}
+		\ifkomavarempty{memberid}{}{MemberNo: & \usekomavar{memberid} \\}
+		\ifkomavarempty{membernick}{}{Nick: & \usekomavar{membernick} \\}
+		\ifkomavarempty{memberemail}{}{E-Mail: & \usekomavar{memberemail} \\}
+	\end{tabular}
+}
+
+%-------------------------------------------------------
+% Kopfzeile
+\firsthead{\headtext
+	\begin{tabular}{p{6.5cm}p{6cm}p{6cm}}
+		\multirow{5}{*}[0.5cm]{\usekomavar{fromlogo}} & \usekomavar{partei} & \\  
+		& \usekomavar{departement} & \\
+		& \usekomavar{fromname} & \\ 
+		& \usekomavar{fromstreet} & \usekomavar{fromemail} \\
+		& \usekomavar{fromcity} & \usekomavar{fromurl} \\
+	\end{tabular}
+}
+
+
+
+
+%-------------------------------------------------------
+% Fusszeile
+%\firstfoot{%
+%
+%
+%}
+\endinput

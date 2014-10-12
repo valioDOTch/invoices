@@ -5,4 +5,5 @@ build/*.out
 build/*.aux
 build/*.pdf
 build/*.eml
-build/*.tex
+build/*.DE.tex
+build/*.EN.tex
