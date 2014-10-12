@@ -1,0 +1,30 @@
+TO: %EMAIL%
+FROM: pat.maechler@piraten-ohne-grenzen.org
+SUBJECT: Piraten Ohne Grenzen Mahnung Mitgliederbeitrag 2014
+Content-Type: multipart/mixed;
+ boundary="------------090509030800070206070005"
+
+This is a multi-part message in MIME format.
+--------------090509030800070206070005
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Ahoy %givenname%
+
+Im Anhang findest du die erste Mahnung für die Mitgliedschaft bei den Piraten ohne Grenzen.
+Ich bitte Dich den Betrag von %Amount% innert 30 Tagen zu begleichen.
+
+Piratige Grüsse im Namen des Vorstands
+
+Pat Mächler
+Schatzmeister Piraten ohne Grenzen
+
+--------------090509030800070206070005
+Content-Type: application/pdf;
+ name="PWB_R_2014-%ID%.pdf"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment;
+ filename="PWB_R_2014-%ID%.pdf"
+
+%base64%
+--------------090509030800070206070005

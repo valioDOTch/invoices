@@ -1,0 +1,9 @@
+# Install
+
+http://en.wikibooks.org/wiki/LaTeX/Packages/Installing_Extra_Packages
+
+relative to texmf-local/
+
+	 cd tex/latex/ \n
+	git clone https://projects.piratenpartei.ch/git/mmd.git ppsstyle\n
+	texhash or mktexlsr or initexmf --update-fndb

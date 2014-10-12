@@ -1,0 +1,1 @@
+In dieses Verzeichnis werden alle Dateien für den Postversand verschoben

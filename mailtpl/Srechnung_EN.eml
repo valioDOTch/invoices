@@ -1,0 +1,29 @@
+TO: %EMAIL%
+FROM: pat.maechler@pirates-without-borders.org
+SUBJECT: Pirates Without Borders Membership 2014
+Content-Type: multipart/mixed;
+ boundary="------------090509030800070206070005"
+
+This is a multi-part message in MIME format.
+--------------090509030800070206070005
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Ahoy %givenname%
+
+Please find attached the invoice for the membership fee 2014 for Pirates Without Borders.
+
+Fair winds on behalf of the newly elected Board
+
+Pat Mächler
+Treasurer Pirates Without Borders
+
+--------------090509030800070206070005
+Content-Type: application/pdf;
+ name="PWB_M_2014-%ID%.pdf"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment;
+ filename="PWB_M_2014-%ID%.pdf"
+
+%base64%
+--------------090509030800070206070005

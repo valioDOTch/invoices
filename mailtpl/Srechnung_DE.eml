@@ -1,0 +1,29 @@
+TO: %EMAIL%
+FROM: pat.maechler@piraten-ohne-grenzen.org
+SUBJECT: Piraten Ohne Grenzen Mitgliederbeitrag 2014
+Content-Type: multipart/mixed;
+ boundary="------------090509030800070206070005"
+
+This is a multi-part message in MIME format.
+--------------090509030800070206070005
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Ahoy %givenname%
+
+Im Anhang findest du die Rechnung für die Mitgliedschaft bei den Piraten ohne Grenzen.
+
+Piratige Grüsse im Namen des neuen Vorstands
+
+Pat Mächler
+Schatzmeister Piraten ohne Grenzen
+
+--------------090509030800070206070005
+Content-Type: application/pdf;
+ name="PWB_M_2014-%ID%.pdf"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment;
+ filename="PWB_M_2014-%ID%.pdf"
+
+%base64%
+--------------090509030800070206070005

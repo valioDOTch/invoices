@@ -1,0 +1,71 @@
+\documentclass[pwbletter]{scrlttr2}
+
+\usepackage{wrapfig}
+\usepackage{datatool}
+\usepackage[margin=10pt,font=small,labelfont=bf]{caption}
+\usepackage{hyperref}
+
+\setkomavar{partei}{}
+\setkomavar{departement}{}
+\setkomavar{fromname}{Pirates without Borders}
+\setkomavar{fromstreet}{Treasurer}
+\setkomavar{fromcity}{9000 St. Gallen, Switzerland}
+\setkomavar{fromemail}{\href{mailto:pat.maechler@\pwbdomain}{pat.maechler@\pwbdomain}}
+\setkomavar{fromaddress}{9000 St. Gallen, Switzerland}
+\setkomavar{signature}{Pat Mächler\\Treasurer}
+\setkomavar{subject}{Invoice member fee 2014}
+
+\newcounter{figure}
+
+\begin{document}
+
+%\selectlanguage{english}
+
+%\DTLforeach{people}{\memberid=id,\nickname=nick,\surname=sn,\givenname=gn,\street=st,\postalcode=plz,\location=loc,\country=cy,\emailaddress=mail}{%
+
+\setkomavar{memberid}{%ID%}
+\setkomavar{membernick}{%nickname%}
+\setkomavar{memberemail}{\href{mailto:%EMAIL%}{%EMAIL%}}
+
+\begin{letter}{%
+	%addressname%\\
+	%address%\\
+	%postalcode%~%location%\\
+	%country%\\
+	\vspace{1.3cm}
+}
+
+\enlargethispage{5cm}
+
+\opening{Ahoy %nickname%}
+
+As treasurer of the Pirates without Borders, I am pleased to welcome you as a new member in our association!
+
+Since you only receive your rights as a member solely upon payment of your membership fee, I would like to ask you \textbf{to transfer the amount of %Amount% as soon as possible}.
+
+Please pay using the following Infomation: \newline
+Amount: %Amount% \newline
+Purpose of Transfer: $PWBREF=M-2014-%ID%$ \newline
+IBAN: CH83 0900 0000 9164 3699 8 \newline
+Bank: Postfinance Bern, Switzerland \newline
+BIC: POFICHBEXXX \newline
+Account Number: 91-643699-8 \hfill (only few banks will still require this from you)
+
+We recommend to go for a SEPA transaction, if you have that opportunity.
+
+Based on feedback we would like to offer  alternative payment methods in the future. I am currently implementing a payment process through Bitpay and we are open to other suggestions. If you are interested, just write me an answer to pat.maechler@piraten-without-grenzen.org
+
+\begin{wrapfigure}{r}{2.5cm}
+  \begin{center}
+    \includegraphics[width=2cm]{valio.jpg}
+  \end{center}
+  \tiny Pat Mächler, Treasurer Pirates Without Borders
+\end{wrapfigure}
+
+~
+
+\closing{Fair winds on behalf of the Board}
+
+\end{letter}
+
+\end{document}

@@ -1,0 +1,77 @@
+\documentclass[pwbletter]{scrlttr2}
+
+\usepackage{wrapfig}
+\usepackage{datatool}
+\usepackage[margin=10pt,font=small,labelfont=bf]{caption}
+\usepackage{hyperref}
+
+
+	\renewcommand{\pwblogoww}{../gfx/pog_Logo_cmyk_de.pdf}
+	\renewcommand{\pwblogowwnego}{../gfx/pog_Logo_negy_cmyk_de.pdf}
+	\renewcommand{\pwblogost}{../gfx/pog_Logo_st_cmyk_de.pdf}
+	\renewcommand{\pwblogostnego}{../gfx/pog_Logo_negy_cmyk_de.pdf}
+	\renewcommand{\pwbname}{\textbf{piraten}ohnegrenzen}
+	\renewcommand{\pwbnamelong}{Piraten ohne Grenzen}
+	\renewcommand{\pwbdomain}{piraten-ohne-grenzen.org}
+
+\setkomavar{partei}{ }
+\setkomavar{departement}{ }
+\setkomavar{fromname}{Piraten ohne Grenzen}
+\setkomavar{fromstreet}{Schatzmeister}
+\setkomavar{fromcity}{9000 St. Gallen, Switzerland}
+\setkomavar{fromemail}{\href{mailto:pat.maechler@piraten-ohne-grenzen.org}{pat.maechler@piraten-ohne-grenzen.org}}
+\setkomavar{fromaddress}{9000 St. Gallen, Switzerland}
+\setkomavar{signature}{Pat Mächler\\Schatzmeister}
+\setkomavar{subject}{Mitgliederbeitrag 2014}
+
+\newcounter{figure}
+
+\begin{document}
+
+%\selectlanguage{ngerman}
+%\selectlanguage{german}
+
+%\setkomavar{memberid}{%ID%}
+%\setkomavar{membernick}{%nickname%}
+%\setkomavar{memberemail}{\href{mailto:%EMAIL%}{%EMAIL%}}
+
+\begin{letter}{%
+	%addressname%\\
+	%address%\\
+	%postalcode%~%location%\\
+	%country%\\
+	\vspace{1.3cm}
+}
+
+\enlargethispage{5cm}
+
+\opening{Ahoi %nickname%}
+
+Als Schatzmeister der Piraten ohne Grenzen freue ich mich dich als Neumitglied in unserem Verein zu begrüssen!
+
+Da du deine Rechte deine als Vereinsmitglied erst mit der Begleichung des Mitgliederbeitrags erhältst, möchte ich Dich bitten \textbf{den Betrag von %Amount% sobald wie möglich zu überweisen}
+
+Verwendungszweck: PWBREF=M-2014-%ID%\newline
+IBAN: CH83 0900 0000 9164 3699 8\newline
+Bank: Postfinance Bern, Switzerland\newline
+BIC: POFICHBEXXX\newline
+Kontonummer: 91-643699-8            (wird nur noch von wenigen Banken verlangt)
+
+Wir empfehlen Dir dabei eine SEPA-Transaktion zu verwenden, sofern du die Möglichkeit dazu hast.
+
+Aufgrund von Rückmeldungen möchten wir zukünftig alternative Zahlungsmethoden anbieten. Ich bin dabei einen Zahlungsprozess mittels Bitpay zu implementieren und bin auch für andere Vorschläge offen. Bei Interesse schreibe mir einfach eine Antwort auf pat.maechler@piraten-ohne-grenzen.org
+
+\begin{wrapfigure}{r}{4cm}
+  \begin{center}
+    \includegraphics[width=4cm]{valio.jpg}
+  \end{center}
+  \tiny Pat Mächler, \\Schatzmeister Piraten ohne Grenzen
+\end{wrapfigure}
+
+~
+
+\closing{Piratige Grüsse im Namen des Vorstands}
+
+\end{letter}
+
+\end{document}

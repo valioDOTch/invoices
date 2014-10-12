@@ -1,0 +1,1 @@
+All files for postal sending are moved into this directory
