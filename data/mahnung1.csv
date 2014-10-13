@@ -1,5 +1,2 @@
-ID;MERGE;EMAIL;LANG;NAME;LASTPAY;nickname;addressname;givenname;addressname;address;postalcode;location;country;Amount
-1;true;a@a.ch;DE;Arnold;;Arnold;Arnold R;Arnold;Herr A.R.;Arnoldstrasse 1;0001;AStadt;Australien;30 EUR
-2;false;b@b.ch;DE;Beat;;Beat;Beat R;Beat;Herr B. R.;Beatstrasse 2;0002;BStadt;Belgium;30 EUR
-3;true;c@c.ch;EN;Christoph;;Christoph;Christoph R;Christoph;Herr C. R.;Christophstrasse 3;0003;CStadt;Cypern;15 EUR
-4;false;d@d.ch;EN;Daniel;;Daniel;Daniel R;Daniel;Herr D.R.;Danielstrasse 4;0004;DStadt;Deutschland;15 EUR
+ID;VIAMAIL;EMAIL;LANG;NAME;LASTPAY;postalcode;Nachname;nickname;givenname;addressname;Organisation;Adresse;Adresszusatz;address;Beitragshöhe;Amount;Letzte Beitragszahlung;MERGE;Rechnung;country;location;Benutzername;Inactive member (wants infos; but not paying);Beitrittsdatum;Beginn
+1;FALSE;piraten@z.net;DE;Gregor;;8888;Sonne;Gregor;Gregor;Gregor Sonne;;unter der Badematte 42;;unter der Badematte 42;Voll;32 Euros;;FALSE;E-Mail;Schweiz;Arisdorf;;;27.05.2010;15.04.2014;

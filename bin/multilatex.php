@@ -12,7 +12,7 @@ function displayUsageText(){
 const MERGE_FIELD = 1;
 const EMAIL_FIELD = 2;*/
 new Field("ID","ID which is used as a the primary record for the addresses.");
-new Field("MERGE","Either a filename or an empty string. If the string is not empty this records product will be merged into said file.");
+new Field("VIAMAIL","Either 'true' or something else (e.g. 'false'). If the string is not 'true' this records product will not generate an eml-file, but will move the PDF in the subfolder build/LANG (e.g. build/DE).");
 new Field("EMAIL","If set an eml file is produced with the document attached.");
 new Field("NAME","Name of the person");
 new Field("LANG","Language for the templates, replacing %L%.");
@@ -22,6 +22,8 @@ new Field("LASTPAY","If set to empty string, invoice will be generated (i.e. del
 
 if (count($argv)<4) {
 	/*print_r($argv);*/displayUsageText(); exit(ABORT_TO_FEW_PARAMETERS);
+} else {
+	print_r($argv);
 }
 
 /*const CSV_FILE = 0;
@@ -31,8 +33,10 @@ new File("csv","adresses in CSV file.",new CSVreader($argv[1]));
 new File("tex","LaTeX document in TEX file.",new TEXreader($argv[2]));
 new File("eml","mail template in EML file.",new EMLreader($argv[3]));
 
+echo "Opening all files\n";
 File::openAllFiles();
 
+echo "Opened all files\n";
 /*foreach ($NECESSARY_FILES as $k=>$data){
 	
 }
@@ -88,7 +92,7 @@ $data = File::f(CSV_FILE)->getReader()->getData();
 //const MERGE_FIELD = 1;
 //const EMAIL_FIELD = 2;
 //const LANG_FIELD = 3;
-
+echo "All CSV columns available\n";
 
 /*
  * writing tex files
@@ -104,7 +108,12 @@ foreach($data as $index => $entry) {
 	
 		$filename = Field::getField($index,ID_FIELD).".".Field::getField($index,LANG_FIELD).".tex";
 		//$templatefile="../textpl/SRechnung_".Field::getField($index,LANG_FIELD).".tex";
+echo "-----".Field::getField($index,LANG_FIELD).".------";
+
         $templatefile= str_replace("%L%",Field::getField($index,LANG_FIELD),$argv[2]);
+
+echo "\n".Field::getField($index,LANG_FIELD)."\n";
+
 		//create the address file
 		$fp = fopen($filename, "w");
 		//$r="";
@@ -199,16 +208,21 @@ foreach($data as $index => $entry) {
 
 //then merge
 $i=0;
+$notviamail="";
 foreach($data as $index => $entry) {
 	//if ($i++>5) break;
 	if (Field::getField($index,"LASTPAY")==="") {//HACK --- TODO improve
-	if (Field::getField($index,"MERGE")==="true") {
-		$filename = Field::getField($index,ID_FIELD).".".Field::getField($index,LANG_FIELD);
-		system("mv $filename.pdf ". Field::getField($index,LANG_FIELD)."/$filename.pdf");
-        system("rm $filename.eml");
-		//system("mv $filename.eml ". Field::getField($index,LANG_FIELD)."/$filename.eml");
-	}
+		if (Field::getField($index,"VIAMAIL")!="true") {
+			$notviamail.="\nNOT VIA MAIL for ".Field::getField($index,"NAME")." but value=".Field::getField($index,"VIAMAIL");
+			$filename = Field::getField($index,ID_FIELD).".".Field::getField($index,LANG_FIELD);
+			system("mv $filename.pdf ". Field::getField($index,LANG_FIELD)."/$filename.pdf");
+			system("rm $filename.eml");
+			//system("mv $filename.eml ". Field::getField($index,LANG_FIELD)."/$filename.eml");
+		} else {
+			echo "\n via eMAIL for ".Field::getField($index,"NAME");
+		}
 	}
 }
+echo $notviamail;
 
 ?>
